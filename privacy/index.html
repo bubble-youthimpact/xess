@@ -3,81 +3,323 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Xess Privacy Policy</title>
-<meta name="description" content="Xess Privacy Policy">
+<script>(function(){var R=["activities", "events", "profile", "login", "signup", "forgot", "about", "faq", "privacy", "terms"],s=location.pathname.split('/').filter(Boolean),b='';if(/\.github\.io$/.test(location.hostname)&&s.length&&R.indexOf(s[0])<0&&!/\.html$/.test(s[0]))b='/'+s[0];window.XESS_BASE=b;document.write('<base href="'+b+'/">');})();</script>
+<title>Xess · Privacy Policy</title>
+<meta name="description" content="Xess is a free app that helps people with disabilities, and their families and friends, find leisure activities they can enjoy without barriers: adaptive sports, arts and hobbies, local clubs, inclusive events and helpful equipment, in English and Korean.">
+<meta property="og:title" content="Xess · Privacy Policy">
+<meta property="og:description" content="Xess is a free app that helps people with disabilities, and their families and friends, find leisure activities they can enjoy without barriers: adaptive sports, arts and hobbies, local clubs, inclusive events and helpful equipment, in English and Korean.">
+<link rel="icon" href="images/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
 <style>
-/* Layout: one readable column; small brand bar, the document in a white card */
+/* Layout: one centered phone-width column of white cards on a soft grey ground, fixed bottom tab bar */
 :root{
-  --bg:#f6f6f6; --card:#ffffff; --fg:#1b1b1b; --muted:#5f5a59; --line:#e4e1e0; --accent:#FF4136;
+  --bg:#f6f6f6; --card:#ffffff; --fg:#1b1b1b; --muted:#5f5a59; --line:#e4e1e0; --tile:#f1efee;
+  --accent:#FF4136; --accent-ink:#ffffff; --accent-soft:#ffeceb; --ph:#e3e6e6; --art-bg:#ffffff; --ph-ink:#a9b1b1;
   --font:'Poppins','Noto Sans KR',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r-card:28px; --r-tile:22px; --col:600px; --nav-h:68px;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121010;--card:#1d1a1a;--fg:#f2eeed;--muted:#aaa3a1;--line:#353030;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121010;--card:#1d1a1a;--fg:#f2eeed;--muted:#aaa3a1;--line:#353030;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121010; --card:#1d1a1a; --fg:#f2eeed; --muted:#aaa3a1; --line:#353030; --tile:#272323;
+  --accent-soft:#3a1d1b; --ph:#2c2828; --ph-ink:#6d6564; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121010; --card:#1d1a1a; --fg:#f2eeed; --muted:#aaa3a1; --line:#353030; --tile:#272323;
+  --accent-soft:#3a1d1b; --ph:#2c2828; --ph-ink:#6d6564; color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{background:var(--bg);color:var(--fg)}
-body{margin:0;font-family:var(--font);font-size:15.5px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
-html[lang="ko"] body{word-break:keep-all}
-.wrap{max-width:680px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-.bar{display:flex;justify-content:space-between;align-items:center;padding:4px 4px 6px}
-.logo{font-size:26px;font-weight:800;letter-spacing:-.02em}.logo b{color:var(--accent)}
-.lang{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);
-  border-radius:999px;padding:5px 13px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
-.lang:hover{border-color:var(--accent)}
-.lang:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-article{background:var(--card);border-radius:28px;padding:30px 26px 34px;display:flex;flex-direction:column;gap:12px}
-h1{margin:0;font-size:clamp(28px,6vw,36px);font-weight:800;line-height:1.2;text-wrap:balance}
-.meta{margin:0;font-size:13.5px;color:var(--muted)}
-h2{margin:16px 0 0;font-size:18px;font-weight:700;line-height:1.35}
+body{font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:24px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom,0px))}
+body.no-nav{padding-bottom:40px}
+:lang(ko) body, html[lang="ko"] body{word-break:keep-all}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+h1,h2,h3{margin:0;text-wrap:balance;line-height:1.2}
 p{margin:0}
-ul{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:6px}
-strong{font-weight:600}
-.copy{user-select:all;font-weight:500}
-footer{text-align:center;font-size:13px;color:var(--muted);padding-top:6px}
+#app{max-width:var(--col);margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border-radius:var(--r-card);padding:24px 22px}
+.h-xl{font-size:clamp(30px,7vw,38px);font-weight:800;letter-spacing:-.01em}
+.h-lg{font-size:clamp(26px,6vw,32px);font-weight:800;letter-spacing:-.01em}
+.h-md{font-size:20px;font-weight:700}
+.muted{color:var(--muted)}
+.stack{display:flex;flex-direction:column;gap:14px}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1.5px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:10px 22px;font-weight:500;font-size:15px;
+  cursor:pointer;text-decoration:none;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.06)}.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.wide{min-width:170px;padding:13px 28px;font-size:16px}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.center{display:flex;justify-content:center}
+.lang-pill{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);
+  border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:600;line-height:1.4;cursor:pointer}
+.lang-pill:hover{border-color:var(--accent)}
+.lang-pill svg{width:16px;height:16px}
+/* header card */
+.topbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:18px 14px}
+.topbar h1{font-size:18px;font-weight:700;text-align:center}
+.icon-btn{width:44px;height:44px;border:0;background:none;display:grid;place-items:center;cursor:pointer;border-radius:50%}
+.icon-btn:hover{background:var(--tile)}
+/* home */
+.brand{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.logo b{color:var(--accent)}
+.hero-art{display:grid;place-items:center;padding:18px;background:var(--art-bg);border-radius:var(--r-card);overflow:hidden}
+.hero-art img{width:100%;height:auto;display:block}
+.orbit{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;width:100%;max-width:440px}
+.orbit span{aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:var(--accent-soft);font-size:clamp(22px,6vw,32px)}
+.orbit span:nth-child(3n){background:var(--tile)}
+.orbit span:nth-child(odd){transform:translateY(10px)}
+/* activity tiles */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 14px}
+.tile{display:flex;flex-direction:column;border-radius:var(--r-tile);overflow:hidden;background:var(--tile);text-decoration:none;
+  transition:transform .15s}
+.tile:hover{transform:translateY(-2px)}
+.tile .art{background:var(--accent);aspect-ratio:1.45;display:grid;place-items:center}
+.tile .art img,.tile .art .emo{width:52%;max-height:78%;object-fit:contain}
+.emo{font-size:clamp(30px,8vw,44px);line-height:1;text-align:center}
+.tile .lbl{padding:9px 4px 11px;text-align:center;font-weight:600;font-size:14px;line-height:1.25;min-height:44px;display:grid;place-items:center}
+/* chips */
+.cat-group{display:flex;flex-direction:column;gap:9px}
+.cat-group h3{font-size:16px;font-weight:700;display:flex;gap:7px;align-items:center}
+.sec h2 .ic{font-size:24px;line-height:1}
+.chips{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin-right:-22px;padding-right:22px;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:7px 18px;cursor:pointer;font-size:14.5px;white-space:nowrap}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.link-btn{border:0;background:none;color:var(--accent);cursor:pointer;font-size:15px;padding:4px 0}
+.search{width:100%;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:11px 18px;font:inherit;color:var(--fg)}
+.search:focus{outline:none;border-color:var(--accent)}
+.empty{padding:28px 0;text-align:center;color:var(--muted)}
+/* FAQ */
+.faq{margin:0}
+.faq dt{font-weight:700;margin-top:18px}.faq dt:first-child{margin-top:0}
+.faq dd{margin:4px 0 0;color:var(--accent)}
+/* detail */
+.sec{display:flex;flex-direction:column;gap:8px;padding:20px 22px}
+.sec h2{font-size:21px;font-weight:700;display:flex;align-items:center;gap:10px}
+.sec .body{white-space:pre-line}
+.bullets{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:7px}
+.bullets li{padding-left:.2em}
+.bullets li::marker{color:var(--fg)}
+.bullets strong{font-weight:600}
+.paras{display:flex;flex-direction:column;gap:10px}
+.paras p{margin:0}
+.paras strong{font-weight:600}
+.sec .body a,.prose a{color:var(--accent);text-decoration:none}
+.sec .body a:hover,.prose a:hover{text-decoration:underline}
+.prose{display:flex;flex-direction:column;gap:12px}
+.club{display:flex;flex-direction:column;gap:6px}
+.club + .club{margin-top:8px}
+.lead-icon{width:76px;height:76px;object-fit:contain}
+.audio{display:flex;gap:10px;margin-top:8px}
+.audio-btn{flex:1;min-width:0;display:flex;align-items:center;gap:12px;text-align:left;border:1.5px solid var(--line);background:var(--card);
+  border-radius:999px;padding:6px 18px 6px 6px;cursor:pointer;transition:border-color .15s,background .15s}
+.audio-btn:hover{border-color:var(--accent)}
+.audio-btn .play{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center}
+.audio-btn .play .i{margin-left:2px}.audio-btn.playing .play .i{margin-left:0}
+.audio-txt{display:flex;flex-direction:column;min-width:0;line-height:1.3}
+.audio-txt strong{font-size:15px;font-weight:600}
+.audio-txt small{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio-btn.playing{background:var(--accent-soft);border-color:var(--accent)}
+.eq{margin-left:auto;display:flex;align-items:flex-end;gap:3px;height:18px;flex:none}
+.eq i{width:3px;height:30%;border-radius:2px;background:var(--line)}
+.audio-btn.playing .eq i{background:var(--accent);animation:eq .9s ease-in-out infinite}
+.audio-btn.playing .eq i:nth-child(2){animation-delay:-.3s}.audio-btn.playing .eq i:nth-child(3){animation-delay:-.6s}.audio-btn.playing .eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:25%}50%{height:100%}}
+.audio-dl{flex:none;width:58px;border:1.5px solid var(--line);background:var(--card);border-radius:999px;display:grid;place-items:center;cursor:pointer;color:var(--fg)}
+.audio-dl:hover{border-color:var(--accent);color:var(--accent)}
+/* community & products: one shared list format */
+.items{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-direction:column}
+.items > li{padding:14px 0;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line)}
+.items > li:first-child{border-top:0;padding-top:4px}
+.items > li:last-child{padding-bottom:0}
+.items p{margin:0}
+.item-link{color:var(--accent);font-weight:600;text-decoration:none;width:max-content;max-width:100%}
+.item-link:hover{text-decoration:underline}
+.ext{font-weight:500;margin-left:4px}
+.item-title{font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}
+.num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:700;display:grid;place-items:center}
+.opt{display:flex;flex-direction:column;gap:2px;padding-left:34px}
+.prod-sum{display:flex;flex-direction:column;gap:4px}
+.prod-sum.has-list{padding-bottom:12px;margin-bottom:2px;border-bottom:1px solid var(--line)}
+.tag{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--accent);
+  background:var(--accent-soft);padding:3px 10px;border-radius:999px;width:max-content}
+/* events */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px}
+.ev{display:flex;flex-direction:column;background:var(--tile);border-radius:var(--r-tile);overflow:hidden;text-decoration:none;transition:transform .15s}
+.ev:hover{transform:translateY(-2px)}
+.ev .pic{aspect-ratio:1.5;background:var(--accent-soft);display:grid;place-items:center;overflow:hidden}
+.ev .pic img{width:100%;height:100%;object-fit:cover}
+.ev .txt{padding:12px 14px 16px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.ev h3{font-size:15px;font-weight:700;line-height:1.35}
+.ev .d{font-size:12.5px;color:var(--accent);font-weight:600}
+.ev p{font-size:14px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.ev.past{opacity:.72}
+.ev-hero{width:100%;aspect-ratio:1.6;object-fit:cover;border-radius:20px;background:var(--accent-soft)}
+.ev-cta{margin-top:12px}
+.meta{display:flex;gap:8px;align-items:center;font-weight:600;color:var(--accent)}
+/* forms */
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-size:16px}
+.input{border:1.5px solid var(--line);border-radius:999px;padding:13px 22px;font:inherit;font-size:16px;background:var(--card);color:var(--fg);width:100%}
+.input:focus{outline:none;border-color:var(--accent)}
+.form{display:flex;flex-direction:column;gap:18px}
+.err{color:var(--accent);font-size:14px;min-height:1em}
+.ok{color:#1f8a4c;font-size:14px}
+.right{text-align:right}
+.avatar-wrap{position:relative;width:150px;margin:6px auto 4px}
+.avatar{width:150px;height:150px;border-radius:50%;background:var(--ph);display:grid;place-items:center;overflow:hidden;cursor:pointer;border:0;padding:0}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar-x{position:absolute;top:0;right:-34px}
+.split{display:flex;justify-content:center;align-items:center;gap:0}
+.split > *{padding:4px 20px;border:0;background:none;cursor:pointer;font-size:16px}
+.split > * + *{border-left:1.5px solid var(--line)}
+.danger{color:var(--accent)}
+.confirm{background:var(--accent-soft);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;text-align:center}
+/* story */
+.stat{font-size:clamp(52px,14vw,72px);font-weight:800;color:var(--accent);text-align:center;letter-spacing:-.02em;line-height:1;padding:12px 0 4px}
+.src{font-size:13px;color:var(--muted)}
+/* icons */
+.i{flex:none;display:block}
+.badge{flex:none;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--accent-soft);color:var(--accent)}
+.badge.sm{width:28px;height:28px;border-radius:9px}
+.badge.lg{width:56px;height:56px;border-radius:18px}
+.btn .i{margin:0 -2px}
+.pic-ph{color:var(--accent);opacity:.75}
+.ev .pic{position:relative}.ev .pic img{position:absolute;inset:0}
+/* auth */
+.auth{padding:30px 24px 28px}
+.auth .form{gap:16px}
+.auth-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;margin-bottom:6px}
+.auth-head .badge{margin-bottom:4px}
+.auth-head p{max-width:34ch}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input-wrap > .i{position:absolute;left:18px;color:var(--muted);pointer-events:none}
+.input-wrap .input{padding-left:50px}
+.input-wrap:focus-within > .i{color:var(--accent)}
+.input-wrap .input[type=password],.input-wrap .input#li-pw,.input-wrap .input#su-pw,.input-wrap .input#su-pw2{padding-right:54px}
+.pw-eye{position:absolute;right:8px;width:40px;height:40px;border:0;background:none;border-radius:50%;display:grid;place-items:center;color:var(--muted);cursor:pointer}
+.pw-eye:hover{background:var(--tile);color:var(--fg)}
+.btn.apple{background:#000;color:#fff;border-color:#000;font-weight:500}
+.btn.apple:hover{filter:none;opacity:.88}
+.btn.google{background:var(--card);color:var(--fg);border-color:var(--line);font-weight:500}
+.btn.google:hover{filter:none;border-color:var(--muted)}
+.center-link{text-align:center;display:block}
+.btn.busy{opacity:.6;pointer-events:none}
+.btn.block{width:100%;padding:13px 22px;font-size:16px}
+.subtle-link{color:var(--muted);text-decoration:none;font-size:14.5px}.subtle-link:hover{color:var(--accent)}
+.strong-link{color:var(--accent);font-weight:700;text-decoration:none}.strong-link:hover{text-decoration:underline}
+.swap{text-align:center;font-size:15px}
+.swap-link{color:var(--fg);text-decoration:none;display:inline-block;padding:6px 4px}
+.swap-link strong{color:var(--accent);font-weight:700}
+.swap-link:hover strong{text-decoration:underline}
+.hint{font-size:13.5px;color:var(--muted);margin-top:-8px;padding-left:20px}
+.or{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+.err:empty{display:none}
+/* bottom nav */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+.tabbar nav{max-width:var(--col);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav-h)}
+.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--muted);font-size:12px}
+.tabbar a[aria-current="page"]{color:var(--accent)}
+.tabbar svg{width:27px;height:27px}
+.tabbar a[aria-current="page"] span:last-child{font-weight:600}
+.tabbar a[aria-current="page"] .home-shape{fill:currentColor}
+.tabbar a:hover:not([aria-current]){color:var(--fg)}
+.fav-btn{color:var(--fg)}
+.fav-btn[aria-pressed="true"]{color:var(--accent)}
+.fav-btn.pop svg{animation:pop .35s ease}
+@keyframes pop{40%{transform:scale(1.3)}100%{transform:scale(1)}}
+.kr-tag{margin-top:-2px}
+.doc{display:flex;flex-direction:column;gap:12px;padding:26px 22px 30px}
+.doc .doc-meta{font-size:13.5px;color:var(--muted)}
+.doc h2{font-size:18px;font-weight:700;margin-top:14px}
+.doc ul{margin:0;padding-left:1.25em;display:flex;flex-direction:column;gap:6px}
+.doc li::marker{color:var(--fg)}
+.doc strong{font-weight:600}
+.legal-links{display:flex;justify-content:center;gap:10px;font-size:13.5px;color:var(--muted);padding:4px 0 8px}
+.legal-links a{color:var(--muted);text-decoration:none}.legal-links a:hover{color:var(--accent);text-decoration:underline}
+.agree{font-size:13.5px;color:var(--muted);text-align:center}
+.agree a{color:var(--fg);font-weight:600}
+.count{min-width:28px;height:28px;padding:0 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:14px;display:grid;place-items:center;align-self:center}
+.fav-empty{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:12px 0 6px;color:var(--muted)}
+.fav-empty-ic{color:var(--line)}.fav-empty-ic svg{width:44px;height:44px}
+.purpose{font-size:16.5px;font-weight:500}
+.nf{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;padding:48px 22px}
+.nf .big{font-size:76px;font-weight:800;color:var(--accent);line-height:1}
+.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+  background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:30}
+@media (max-width:420px){.grid3{gap:12px 10px}.tile .lbl{font-size:12.5px}.grid2{gap:12px}.ev .txt{padding:10px 10px 14px}.card{padding:22px 18px}.chips{margin-right:-18px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-
+<style>:root{padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
-<div class="wrap">
-  <div class="bar">
-    <span class="logo">Xess<b>.</b></span>
-    <button class="lang" id="lang" type="button"></button>
-  </div>
-  <article id="doc" aria-live="polite"></article>
-  <footer>© 2026 Xess</footer>
-</div>
+<div id="app" aria-live="polite"><header class="card topbar"><button class="icon-btn" data-back="/" aria-label="Back"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg></button><h1>Privacy Policy</h1><span></span></header>
+ <article class="card doc"><p class="doc-meta">Effective Date: February 28, 2026 · Last updated: October 27, 2026</p>
+<p>At Xess, we believe in “Turning Barriers into Beginnings.” We also believe that your privacy shouldn't be a barrier. Our approach to data is simple: we only collect what is strictly necessary to make your experience feel personal and welcoming.</p>
+<p>You can browse every activity, event and guide on Xess without an account. This policy only applies if you choose to create one.</p>
 
-<script type="application/json" id="d">{"en": {"title": "Privacy Policy", "meta": "Effective Date: February 28, 2026 · Last updated: October 27, 2026", "body": "\n<p>At Xess, we believe in “Turning Barriers into Beginnings.” We also believe that your privacy shouldn't be a barrier. Our approach to data is simple: we only collect what is strictly necessary to make your experience feel personal and welcoming.<\/p>\n<p>You can browse every activity, event and guide on Xess without an account. This policy only applies if you choose to create one.<\/p>\n\n<h2>1. The Only Information We Collect<\/h2>\n<p>We keep our data collection to an absolute minimum:<\/p>\n<ul>\n<li><strong>Name:<\/strong> So the app can greet you and show your profile.<\/li>\n<li><strong>Email address:<\/strong> So you can sign in, and so we can send a password reset or email-change confirmation when you ask for one.<\/li>\n<li><strong>Password:<\/strong> Handled by our sign-in provider, Google Firebase Authentication. It is stored in encrypted form, and we never see it.<\/li>\n<li><strong>Profile picture (optional):<\/strong> We request access to your camera or photo library only if you choose to upload a profile picture. It is used solely to personalize your account view.<\/li>\n<li><strong>Favorites:<\/strong> The list of activities you save with the heart button, so you can find them again.<\/li>\n<\/ul>\n<p>If you sign in with Google, Google shares your name, email address and profile picture with us. We use them only as described above.<\/p>\n<p>Your language choice is saved on your own device, not on our servers.<\/p>\n\n<h2>2. What We Don't Collect<\/h2>\n<p>To keep your experience secure and private:<\/p>\n<ul>\n<li>We do not collect health or medical records, and we never ask about your disability.<\/li>\n<li>We do not track your precise GPS location.<\/li>\n<li>We do not use advertising trackers.<\/li>\n<li>We do not sell your data to third parties.<\/li>\n<\/ul>\n\n<h2>3. How We Use Your Information<\/h2>\n<p>Your information is used exclusively for:<\/p>\n<ul>\n<li><strong>Personalization:<\/strong> Making the Xess interface feel like your own space.<\/li>\n<li><strong>Your account:<\/strong> Signing you in, keeping your account secure, and sending the account emails you request.<\/li>\n<li><strong>Favorites:<\/strong> Saving the activities you choose.<\/li>\n<\/ul>\n\n<h2>4. Storage and Security<\/h2>\n<p>Your profile information is stored securely with Google Firebase (Authentication and Cloud Firestore), which processes it on our behalf. Data is encrypted in transit and may be stored on Google's servers outside your country. Since we do not collect sensitive financial or medical data, the risk to your personal privacy is significantly reduced.<\/p>\n<p>You can update or remove your name and photo at any time on the Profile page.<\/p>\n\n<h2>5. Your Control<\/h2>\n<p>You have full control over your data. If you decide to leave Xess, go to <strong>Profile → Delete account<\/strong>. Your account, name, email address, photo and favorites will be removed from our systems immediately.<\/p>\n\n<h2>6. Children<\/h2>\n<p>If you are under 14, please ask a parent or guardian before creating an account.<\/p>\n\n<h2>7. Links to Other Websites<\/h2>\n<p>Xess links to clubs, event pages and online stores run by others. Those websites have their own privacy policies, and we are not responsible for how they handle your information.<\/p>\n\n<h2>8. Changes to This Policy<\/h2>\n<p>If we change this policy, we will update the date at the top of this page.<\/p>\n\n<h2>Contact Us<\/h2>\n<p>If you have any questions about our “minimal data” philosophy, reach out at:<br><strong>Email:<\/strong> <span class=\"copy\">bubble.youthimpact@gmail.com<\/span><\/p>\n"}, "ko": {"title": "개인정보처리방침", "meta": "시행일: 2026년 2월 28일 · 최종 수정일: 2026년 10월 27일", "body": "\n<p>Xess는 “장벽을 새로운 시작으로”라는 믿음을 가지고 있습니다. 개인정보 역시 장벽이 되어서는 안 된다고 생각합니다. 저희의 원칙은 간단합니다. 여러분의 경험을 더 개인적이고 따뜻하게 만드는 데 꼭 필요한 정보만 수집합니다.<\/p>\n<p>Xess의 모든 활동, 행사, 가이드는 계정 없이 둘러볼 수 있습니다. 이 방침은 계정을 만드는 경우에만 적용됩니다.<\/p>\n\n<h2>1. 수집하는 정보<\/h2>\n<p>수집하는 정보는 최소한으로 제한합니다.<\/p>\n<ul>\n<li><strong>이름:<\/strong> 앱에서 인사를 건네고 프로필을 보여 드리기 위해 사용합니다.<\/li>\n<li><strong>이메일 주소:<\/strong> 로그인에 사용하며, 요청하신 경우 비밀번호 재설정 또는 이메일 변경 확인 메일을 보내 드립니다.<\/li>\n<li><strong>비밀번호:<\/strong> 로그인 서비스인 Google Firebase 인증이 처리하며 암호화되어 저장됩니다. Xess는 비밀번호를 볼 수 없습니다.<\/li>\n<li><strong>프로필 사진(선택):<\/strong> 프로필 사진을 올리기로 선택한 경우에만 카메라 또는 사진 보관함 접근을 요청합니다. 계정 화면을 꾸미는 용도로만 사용합니다.<\/li>\n<li><strong>즐겨찾기:<\/strong> 하트 버튼으로 저장한 활동 목록으로, 다시 찾아볼 수 있도록 저장합니다.<\/li>\n<\/ul>\n<p>Google로 로그인하면 Google이 이름, 이메일 주소, 프로필 사진을 Xess에 제공합니다. 이 정보는 위에 설명한 용도로만 사용합니다.<\/p>\n<p>언어 설정은 저희 서버가 아닌 사용자의 기기에 저장됩니다.<\/p>\n\n<h2>2. 수집하지 않는 정보<\/h2>\n<p>안전하고 사적인 이용을 위해:<\/p>\n<ul>\n<li>건강 또는 의료 기록을 수집하지 않으며, 장애에 관해 묻지 않습니다.<\/li>\n<li>정확한 GPS 위치를 추적하지 않습니다.<\/li>\n<li>광고 추적 도구를 사용하지 않습니다.<\/li>\n<li>개인정보를 제3자에게 판매하지 않습니다.<\/li>\n<\/ul>\n\n<h2>3. 정보의 이용 목적<\/h2>\n<p>수집한 정보는 다음 목적으로만 사용합니다.<\/p>\n<ul>\n<li><strong>개인화:<\/strong> Xess를 나만의 공간처럼 느낄 수 있도록 합니다.<\/li>\n<li><strong>계정 관리:<\/strong> 로그인, 계정 보안, 요청하신 계정 관련 이메일 발송에 사용합니다.<\/li>\n<li><strong>즐겨찾기:<\/strong> 선택한 활동을 저장합니다.<\/li>\n<\/ul>\n\n<h2>4. 보관 및 보안<\/h2>\n<p>프로필 정보는 Xess를 대신해 정보를 처리하는 Google Firebase(인증 및 Cloud Firestore)에 안전하게 보관됩니다. 전송 중인 데이터는 암호화되며, 국외에 있는 Google 서버에 저장될 수 있습니다. 민감한 금융 정보나 의료 정보를 수집하지 않기 때문에 개인정보 위험이 크게 줄어듭니다.<\/p>\n<p>이름과 사진은 프로필 페이지에서 언제든지 수정하거나 삭제할 수 있습니다.<\/p>\n\n<h2>5. 이용자의 권리<\/h2>\n<p>여러분은 자신의 정보를 완전히 관리할 수 있습니다. Xess를 떠나기로 하셨다면 <strong>프로필 → 계정 삭제<\/strong>를 누르세요. 계정, 이름, 이메일 주소, 사진, 즐겨찾기가 즉시 삭제됩니다.<\/p>\n\n<h2>6. 아동<\/h2>\n<p>만 14세 미만이라면 계정을 만들기 전에 부모님이나 보호자에게 먼저 물어봐 주세요.<\/p>\n\n<h2>7. 외부 웹사이트 링크<\/h2>\n<p>Xess는 다른 기관이 운영하는 클럽, 행사 페이지, 온라인 상점으로 연결됩니다. 해당 웹사이트에는 각자의 개인정보처리방침이 적용되며, Xess는 그곳에서의 정보 처리에 책임을 지지 않습니다.<\/p>\n\n<h2>8. 방침의 변경<\/h2>\n<p>이 방침이 변경되면 이 페이지 상단의 날짜를 업데이트합니다.<\/p>\n\n<h2>문의하기<\/h2>\n<p>“최소한의 데이터” 원칙에 대해 궁금한 점이 있다면 연락해 주세요.<br><strong>이메일:<\/strong> <span class=\"copy\">bubble.youthimpact@gmail.com<\/span><\/p>\n"}}</script>
-<script>
-const DOC=JSON.parse(document.getElementById('d').textContent);
-const GLOBE='<svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"/></svg>';
-function pick(){
-  const q=new URLSearchParams(location.search).get('lang'), h=location.hash.slice(1);
-  if(q==='ko'||h==='ko') return 'ko'; if(q==='en'||h==='en') return 'en';
-  try{ const s=localStorage.getItem('xess_legal_lang'); if(s) return s; }catch(e){}
-  return (navigator.language||'').toLowerCase().startsWith('ko') ? 'ko' : 'en';
-}
-let lang=pick();
-function show(){
-  const d=DOC[lang];
-  document.documentElement.lang=lang;
-  document.title='Xess · '+d.title;
-  document.getElementById('doc').innerHTML=`<h1>${d.title}</h1><p class="meta">${d.meta}</p>${d.body}`;
-  const b=document.getElementById('lang');
-  b.innerHTML=GLOBE+(lang==='ko'?'EN':'KO');
-  b.setAttribute('aria-label',lang==='ko'?'Read in English':'한국어로 보기');
-}
-document.getElementById('lang').addEventListener('click',()=>{
-  lang=lang==='ko'?'en':'ko';
-  try{ localStorage.setItem('xess_legal_lang',lang); }catch(e){}
-  history.replaceState(null,'','#'+lang); show();
-});
-window.addEventListener('hashchange',()=>{ const h=location.hash.slice(1); if(h==='ko'||h==='en'){ lang=h; show(); } });
-show();
-</script>
+<h2>1. The Only Information We Collect</h2>
+<p>We keep our data collection to an absolute minimum:</p>
+<ul>
+<li><strong>Name:</strong> So the app can greet you and show your profile.</li>
+<li><strong>Email address:</strong> So you can sign in, and so we can send a password reset or email-change confirmation when you ask for one.</li>
+<li><strong>Password:</strong> Handled by our sign-in provider, Google Firebase Authentication. It is stored in encrypted form, and we never see it.</li>
+<li><strong>Profile picture (optional):</strong> We request access to your camera or photo library only if you choose to upload a profile picture. It is used solely to personalize your account view.</li>
+<li><strong>Favorites:</strong> The list of activities you save with the heart button, so you can find them again.</li>
+</ul>
+<p>If you sign in with Google, Google shares your name, email address and profile picture with us. We use them only as described above.</p>
+<p>Your language choice is saved on your own device, not on our servers.</p>
+
+<h2>2. What We Don't Collect</h2>
+<p>To keep your experience secure and private:</p>
+<ul>
+<li>We do not collect health or medical records, and we never ask about your disability.</li>
+<li>We do not track your precise GPS location.</li>
+<li>We do not use advertising trackers.</li>
+<li>We do not sell your data to third parties.</li>
+</ul>
+
+<h2>3. How We Use Your Information</h2>
+<p>Your information is used exclusively for:</p>
+<ul>
+<li><strong>Personalization:</strong> Making the Xess interface feel like your own space.</li>
+<li><strong>Your account:</strong> Signing you in, keeping your account secure, and sending the account emails you request.</li>
+<li><strong>Favorites:</strong> Saving the activities you choose.</li>
+</ul>
+
+<h2>4. Storage and Security</h2>
+<p>Your profile information is stored securely with Google Firebase (Authentication and Cloud Firestore), which processes it on our behalf. Data is encrypted in transit and may be stored on Google's servers outside your country. Since we do not collect sensitive financial or medical data, the risk to your personal privacy is significantly reduced.</p>
+<p>You can update or remove your name and photo at any time on the Profile page.</p>
+
+<h2>5. Your Control</h2>
+<p>You have full control over your data. If you decide to leave Xess, go to <strong>Profile → Delete account</strong>. Your account, name, email address, photo and favorites will be removed from our systems immediately.</p>
+
+<h2>6. Children</h2>
+<p>If you are under 14, please ask a parent or guardian before creating an account.</p>
+
+<h2>7. Links to Other Websites</h2>
+<p>Xess links to clubs, event pages and online stores run by others. Those websites have their own privacy policies, and we are not responsible for how they handle your information.</p>
+
+<h2>8. Changes to This Policy</h2>
+<p>If we change this policy, we will update the date at the top of this page.</p>
+
+<h2>Contact Us</h2>
+<p>If you have any questions about our “minimal data” philosophy, reach out at:<br><strong>Email:</strong> <span class="copy">bubble.youthimpact@gmail.com</span></p>
+</article></div>
+<div class="tabbar" id="tabbar"><nav id="tabs" aria-label="Main"><a href="./" data-link="/" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path class="home-shape" d="M3.5 10.2 12 3.4l8.5 6.8V19a2 2 0 0 1-2 2h-3.6v-5.6a1.3 1.3 0 0 0-1.3-1.3h-3.2a1.3 1.3 0 0 0-1.3 1.3V21H5.5a2 2 0 0 1-2-2z"></path></svg><span>Home</span></a><a href="activities" data-link="/activities" class=""><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm76.52,147.42H170.9l-9.26-12.76,12.63-36.78,15-4.89,26.24,20.13A87.38,87.38,0,0,1,204.52,171.42Zm-164-34.3L66.71,117l15,4.89,12.63,36.78L85.1,171.42H51.48A87.38,87.38,0,0,1,40.47,137.12Zm10-50.64,5.51,18.6L40.71,116.77A87.33,87.33,0,0,1,50.43,86.48ZM109,152,97.54,118.65,128,97.71l30.46,20.94L147,152Zm91.07-46.92,5.51-18.6a87.33,87.33,0,0,1,9.72,30.29Zm-6.2-35.38-9.51,32.08-15.07,4.89L136,83.79V68.21l29.09-20A88.58,88.58,0,0,1,193.86,69.7ZM146.07,41.87,128,54.29,109.93,41.87a88.24,88.24,0,0,1,36.14,0ZM90.91,48.21l29.09,20V83.79L86.72,106.67l-15.07-4.89L62.14,69.7A88.58,88.58,0,0,1,90.91,48.21ZM63.15,187.42H83.52l7.17,20.27A88.4,88.4,0,0,1,63.15,187.42ZM110,214.13,98.12,180.71,107.35,168h41.3l9.23,12.71-11.83,33.42a88,88,0,0,1-36.1,0Zm55.36-6.44,7.17-20.27h20.37A88.4,88.4,0,0,1,165.31,207.69Z"></path></svg><span>Activities</span></a><a href="events" data-link="/events" class=""><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-68-76a12,12,0,1,1-12-12A12,12,0,0,1,140,132Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,132ZM96,172a12,12,0,1,1-12-12A12,12,0,0,1,96,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,140,172Zm44,0a12,12,0,1,1-12-12A12,12,0,0,1,184,172Z"></path></svg><span>Events</span></a><a href="profile" data-link="/profile" class=""><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"></path></svg><span>Profile</span></a></nav></div>
+<div class="toast" id="toast" hidden></div>
+<input type="file" id="avatar-input" accept="image/*" hidden>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
