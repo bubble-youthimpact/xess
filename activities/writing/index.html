@@ -22,6 +22,7 @@
   --sab:max(env(safe-area-inset-bottom,0px),var(--safe-area-inset-bottom,0px));
   --sal:max(env(safe-area-inset-left,0px),var(--safe-area-inset-left,0px));
   --sar:max(env(safe-area-inset-right,0px),var(--safe-area-inset-right,0px));
+  --top:max(var(--sat),44px);   /* room for the phone status bar in the wrapped app */
   --r-card:28px; --r-tile:22px; --col:600px; --nav-h:68px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -33,11 +34,11 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{background:var(--bg);color:var(--fg)}
-html{padding-top:var(--sat)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:var(--sat);background:var(--bg);z-index:25}
+html{padding-top:0}
+body::before{content:"";position:fixed;left:0;right:0;top:0;height:56px;background:var(--bg);z-index:25}
 body{font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
   padding-left:max(16px,var(--sal));padding-right:max(16px,var(--sar));
-  padding-block:24px calc(var(--nav-h) + 28px + var(--sab))}
+  padding-top:88px;padding-bottom:calc(var(--nav-h) + 28px + var(--sab))}
 body.no-nav{padding-bottom:40px}
 :lang(ko) body, html[lang="ko"] body{word-break:keep-all}
 a{color:inherit}
