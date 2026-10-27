@@ -473,7 +473,6 @@ V.login = () => `${topbar(t('login'),'/')}
    <button class="btn block" type="submit">${t('login')}</button>
    <div class="or"><span>${t('or')}</span></div>
    ${appleBtn()}${googleBtn()}
-   ${A('/activities',t('browse'),'subtle-link center-link')}
    <p class="swap">${A('/signup',`${t('noAcct')} <strong>${t('signup')}</strong>`,'swap-link')}</p>
  </form></section>`;
 V.signup = () => `${topbar(t('signup'),'/login')}

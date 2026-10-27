@@ -18,6 +18,10 @@
   --bg:#f6f6f6; --card:#ffffff; --fg:#1b1b1b; --muted:#5f5a59; --line:#e4e1e0; --tile:#f1efee;
   --accent:#FF4136; --accent-ink:#ffffff; --accent-soft:#ffeceb; --ph:#e3e6e6; --art-bg:#ffffff; --ph-ink:#a9b1b1;
   --font:'Poppins','Noto Sans KR',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --sat:max(env(safe-area-inset-top,0px),var(--safe-area-inset-top,0px));
+  --sab:max(env(safe-area-inset-bottom,0px),var(--safe-area-inset-bottom,0px));
+  --sal:max(env(safe-area-inset-left,0px),var(--safe-area-inset-left,0px));
+  --sar:max(env(safe-area-inset-right,0px),var(--safe-area-inset-right,0px));
   --r-card:28px; --r-tile:22px; --col:600px; --nav-h:68px;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
@@ -29,9 +33,11 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html,body{background:var(--bg);color:var(--fg)}
+html{padding-top:var(--sat)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:var(--sat);background:var(--bg);z-index:25}
 body{font-family:var(--font);font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
-  padding-block:24px calc(var(--nav-h) + 28px + env(safe-area-inset-bottom,0px))}
+  padding-left:max(16px,var(--sal));padding-right:max(16px,var(--sar));
+  padding-block:24px calc(var(--nav-h) + 28px + var(--sab))}
 body.no-nav{padding-bottom:40px}
 :lang(ko) body, html[lang="ko"] body{word-break:keep-all}
 a{color:inherit}
@@ -226,9 +232,9 @@ p{margin:0}
 .err:empty{display:none}
 /* bottom nav */
 .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--card);border-top:1px solid var(--line);
-  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px))}
+  padding-bottom:var(--sab);padding-left:max(8px,var(--sal));padding-right:max(8px,var(--sar))}
 .tabbar nav{max-width:var(--col);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav-h)}
-.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--muted);font-size:12px}
+.tabbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--muted);font-size:10.5px;letter-spacing:.01em}
 .tabbar a[aria-current="page"]{color:var(--accent)}
 .tabbar svg{width:27px;height:27px}
 .tabbar a[aria-current="page"] span:last-child{font-weight:600}
@@ -255,12 +261,12 @@ p{margin:0}
 .purpose{font-size:16.5px;font-weight:500}
 .nf{text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;padding:48px 22px}
 .nf .big{font-size:76px;font-weight:800;color:var(--accent);line-height:1}
-.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+.toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 18px + var(--sab));transform:translateX(-50%);
   background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:30}
 @media (max-width:420px){.grid3{gap:12px 10px}.tile .lbl{font-size:12.5px}.grid2{gap:12px}.ev .txt{padding:10px 10px 14px}.card{padding:22px 18px}.chips{margin-right:-18px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<style>:root{padding-top:env(safe-area-inset-top,0px)}body{margin:0}img{max-width:100%}</style>
+<style>body{margin:0}img{max-width:100%}</style>
 </head>
 <body>
 <div id="app" aria-live="polite"><header class="card topbar"><button class="icon-btn" data-back="/activities" aria-label="Back"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M15 5l-7 7 7 7"></path></svg></button><h1>Badminton</h1><button class="icon-btn fav-btn" id="fav" type="button" aria-pressed="false" aria-label="Add to favorites"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"></path></svg></button></header>
