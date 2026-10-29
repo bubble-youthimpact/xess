@@ -37,7 +37,7 @@ const T = {
   errExists:'An account with this email already exists. Log in instead.',errName:'Enter your name.',
   about:'About Us',story:'Our Story',
   storyText:'<b>Xess</b> is a platform where every person can enjoy leisure activities <b>without impediment</b>. We aim to organize information tailored for <b>disabled people</b>, breaking the higher barrier that they need to confront when engaging in any community.',
-  statText:'Only 35.2% of disabled citizens in Korea participate in art·sport activities.',statSrc:'Ministry of Culture, Sports and Tourism, 2023',
+  statNum:'47%',statText:'Nearly half (47%) of adults with disabilities in the U.S. who are able to exercise get no aerobic physical activity.',statSrc:'U.S. Centers for Disease Control and Prevention (CDC), 2014',
   nfTitle:'Page not found',nfText:"We couldn't find that page. It may have moved.",goHome:'Back to Home',
   faqs:[
    ['Do I need an account to participate in activities?','No, you can access the information without logging in.'],
@@ -64,7 +64,7 @@ const T = {
   errExists:'이미 가입된 이메일입니다. 로그인해 주세요.',errName:'이름을 입력하세요.',
   about:'소개',story:'우리의 이야기',
   storyText:'<b>Xess</b>는 누구나 <b>제약 없이</b> 여가 활동을 즐길 수 있는 플랫폼입니다. <b>장애인</b>이 공동체에 참여할 때 마주하는 높은 장벽을 허물기 위해, 장애인에게 맞춘 정보를 정리합니다.',
-  statText:'국내 장애인 중 문화예술·체육 활동에 참여하는 비율은 35.2%에 불과합니다.',statSrc:'문화체육관광부, 2023',
+  statNum:'47%',statText:'미국에서 운동이 가능한 장애인 성인의 약 절반(47%)이 유산소 신체 활동을 전혀 하지 않습니다.',statSrc:'미국 질병통제예방센터(CDC), 2014',
   nfTitle:'페이지를 찾을 수 없습니다',nfText:'요청하신 페이지가 없거나 이동되었습니다.',goHome:'홈으로 가기',
   faqs:[
    ['활동에 참여하려면 계정이 필요한가요?','아니요, 로그인 없이도 모든 정보를 볼 수 있습니다.'],
@@ -449,7 +449,7 @@ V.about = () => `${topbar(t('about'),'/')}
  <section class="card stack" style="gap:18px">
    <h1 class="h-lg" style="font-size:clamp(30px,7vw,40px)">${t('story')}</h1>
    <p style="font-size:16.5px">${t('storyText')}</p>
-   <p class="stat">35.2%</p>
+   <p class="stat">${t('statNum')}</p>
    <div><p style="font-size:16.5px">${t('statText')}</p><p class="src">${t('statSrc')}</p></div>
    <div class="hero-art" style="padding:8px"><img src="images/our-story.avif" width="768" height="695" alt="${lang==='ko'?'다양한 사람들의 손이 모여 만든 하트':'Many different hands joining to form a heart'}"></div>
  </section>`;
